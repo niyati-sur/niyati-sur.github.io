@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Niyati Sur — electrical engineering, embedded systems, robotics, and research portfolio." />
+  <title>Niyati Sur — Electrical Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="cursor-orb" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Niyati Sur home">
+      <span class="brand-mark">NS</span>
+      <span class="brand-name">NIYATI SUR</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="pill pill-dark" href="#work">See my work <span>↘</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero section-pad">
+      <div class="hero-kicker reveal">ELECTRICAL ENGINEERING · EMBEDDED SYSTEMS · ROBOTICS</div>
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <h1>I LIKE BUILDING<br><span>THINGS THAT MOVE.</span></h1>
+          <p class="hero-intro">I’m Niyati, an Electrical Engineering student at Texas A&amp;M. I like the point where hardware and software stop being separate things and start working together.</p>
+        </div>
+        <div class="hero-art reveal" aria-hidden="true">
+          <div class="flight-path"></div>
+          <div class="flight-node node-a"></div>
+          <div class="flight-node node-b"></div>
+          <div class="flight-node node-c"></div>
+          <div class="hero-chip">
+            <span>currently into</span>
+            <strong>autonomy<br>+ sensing</strong>
+          </div>
+        </div>
+      </div>
+      <div class="hero-strip reveal">
+        <span>PCB DESIGN</span><i>✦</i><span>C++</span><i>✦</i><span>MICROCONTROLLERS</span><i>✦</i><span>SENSOR DATA</span><i>✦</i><span>COMPUTER VISION</span>
+      </div>
+    </section>
+
+    <section class="statement section-pad">
+      <p class="eyebrow reveal">WHAT I CARE ABOUT</p>
+      <h2 class="statement-text reveal">I’m most interested in problems where the answer has to work <em>in the real world</em>, not just on paper.</h2>
+    </section>
+
+    <section class="projects section-pad" id="work">
+      <div class="section-heading reveal">
+        <p class="eyebrow">SELECTED WORK</p>
+        <h2>Things I’ve<br>actually built.</h2>
+      </div>
+
+      <article class="project project-dark reveal" data-project="sae">
+        <div class="project-topline">
+          <span>01 / AUTONOMOUS SYSTEMS</span>
+          <span>SAE AERO</span>
+        </div>
+        <div class="project-layout">
+          <div class="project-copy">
+            <h3>A ROBOT THAT HAS TO FIGURE OUT WHERE IT IS.</h3>
+            <p>I work on the autonomous systems side of Texas A&amp;M’s SAE Aero team. Our payload gets dropped from a plane, lands inside an 8 ft × 8 ft zone, and has to navigate on its own before reconnecting with the aircraft.</p>
+            <p>My work has touched the PCB, sensors, motor control, embedded C++, camera research, and navigation. The part I like most is that every decision affects something else. A sensor choice changes the software. A power decision changes the board. An algorithm is useless if the hardware cannot give it the data it needs.</p>
+            <div class="tags">
+              <span>KiCad</span><span>STM32</span><span>C++</span><span>AprilTags</span><span>Motor Control</span>
+            </div>
+          </div>
+          <div class="project-visual photo-collage sae-collage">
+            <figure class="photo-tile tile-main">
+              <img src="assets/pcb_3d.webp" alt="3D render of the autonomous payload PCB in KiCad" loading="lazy">
+              <figcaption>PCB / 3D VIEW</figcaption>
+            </figure>
+            <figure class="photo-tile tile-secondary">
+              <img src="assets/pcb_schematic.webp" alt="KiCad schematic for the autonomous payload electronics" loading="lazy">
+              <figcaption>SCHEMATIC</figcaption>
+            </figure>
+            <figure class="photo-tile tile-detail">
+              <img src="assets/pcb_layout.webp" alt="PCB layout and unrouted connections in KiCad" loading="lazy">
+              <figcaption>BOARD LAYOUT</figcaption>
+            </figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-cream reveal" data-project="watch">
+        <div class="project-topline">
+          <span>02 / EMBEDDED DESIGN</span>
+          <span>TIME-BLINDNESS WATCH</span>
+        </div>
+        <div class="project-layout reverse">
+          <div class="project-copy">
+            <h3>MAKING TIME VISIBLE.</h3>
+            <p>For a design project, my group built a watch concept for people who struggle with time blindness. We used a GEMMA microcontroller and a NeoPixel ring so time could be represented visually instead of through another alarm or notification.</p>
+            <p>I owned the software side. I pushed for the watch to be customizable, because one fixed countdown pattern was not going to work for everyone. The idea was for a user to describe what they wanted, then translate that into specific LED colors, timing, and patterns the microcontroller could actually execute.</p>
+            <div class="tags">
+              <span>GEMMA</span><span>NeoPixel</span><span>Embedded Software</span><span>Bluetooth</span><span>Human-Centered Design</span>
+            </div>
+          </div>
+          <div class="project-visual photo-collage watch-collage">
+            <figure class="photo-tile watch-sketch-tile">
+              <img src="assets/watch_sketch.webp" alt="Hand-drawn design sketches for the time-blindness watch" loading="lazy">
+              <figcaption>EARLY FORM + COMPONENT PLANNING</figcaption>
+            </figure>
+            <figure class="photo-tile gemma-tile">
+              <img src="assets/gemma.webp" alt="Adafruit GEMMA microcontroller used for the watch prototype" loading="lazy">
+              <figcaption>GEMMA / MICROCONTROLLER</figcaption>
+            </figure>
+            <div class="mini-watch" aria-hidden="true">
+              <span>30</span><small>MIN</small>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-violet reveal" data-project="research">
+        <div class="project-topline">
+          <span>03 / RESEARCH</span>
+          <span>EEG + RASPBERRY PI</span>
+        </div>
+        <div class="project-layout">
+          <div class="project-copy">
+            <h3>TURNING BRAIN SIGNALS INTO SOMETHING I COULD ACTUALLY USE.</h3>
+            <p>Over the summer, I worked on an EEG research project using a Muse S headband and Raspberry Pi. The goal was to stream and process EEG data and build a pipeline that could eventually support emotion or cognitive-state analysis.</p>
+            <p>I worked through Bluetooth connection issues, XDF recordings, filtering, ICA cleanup, annotations, and feature extraction. A lot of the project was learning how messy real sensor data can be, and how much work has to happen before a machine-learning model ever sees it.</p>
+            <div class="tags">
+              <span>Raspberry Pi</span><span>Muse S</span><span>Python</span><span>MNE</span><span>Signal Processing</span><span>EEG</span>
+            </div>
+          </div>
+          <div class="project-visual photo-collage research-collage">
+            <figure class="photo-tile eeg-main">
+              <img src="assets/eeg_trace2.webp" alt="EEGLAB channel activity view showing EEG artifact regions" loading="lazy">
+              <figcaption>4-CHANNEL EEG / ARTIFACT REVIEW</figcaption>
+            </figure>
+            <figure class="photo-tile eeg-secondary">
+              <img src="assets/eeg_ic3.webp" alt="EEGLAB independent component analysis and power spectrum" loading="lazy">
+              <figcaption>ICA + POWER SPECTRUM</figcaption>
+            </figure>
+            <div class="signal-stamp">TP9 · AF7 · AF8 · TP10</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="process section-pad">
+      <div class="section-heading reveal">
+        <p class="eyebrow">HOW I WORK</p>
+        <h2>Build.<br>Break.<br>Understand why.</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-card reveal"><span>01</span><h3>Start with the system.</h3><p>I try to understand what the hardware can actually sense, supply, and control before getting attached to an algorithm.</p></div>
+        <div class="process-card reveal"><span>02</span><h3>Ask early.</h3><p>If I’m missing context, I would rather ask a team lead why an old decision was made than spend two days solving the wrong problem.</p></div>
+        <div class="process-card reveal"><span>03</span><h3>Test the physical thing.</h3><p>Compiling is not the finish line. I care about what the board, sensor, motor, or dataset does when it is actually used.</p></div>
+      </div>
+    </section>
+
+    <section class="about section-pad" id="about">
+      <div class="about-card reveal">
+        <div>
+          <p class="eyebrow">ABOUT ME</p>
+          <h2>I’m still learning.<br>That’s kind of the point.</h2>
+        </div>
+        <div class="about-copy">
+          <p>I’m an Electrical Engineering student at Texas A&amp;M interested in embedded systems, robotics, sensing, and medical technology. I like projects where I have to learn enough about several different pieces to understand how the whole system works.</p>
+          <p>Most of what I know came from building something, getting confused, reading way too many datasheets, asking somebody a question, and trying again.</p>
+          <a class="text-link" href="#contact">Talk to me <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section-pad" id="contact">
+      <p class="eyebrow reveal">CONTACT</p>
+      <div class="contact-grid reveal">
+        <h2>LET’S BUILD<br>SOMETHING <span>REAL.</span></h2>
+        <div class="contact-actions">
+          <a class="pill pill-light" id="emailLink" href="mailto:surbniyati@gmail.com">Email me <span>↗</span></a>
+          <a class="pill pill-outline" id="linkedinLink" href="https://www.linkedin.com/in/niyati-sur" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+          <p class="contact-note">College Station, TX · Open to Summer 2027 internships</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>NIYATI SUR</span>
+    <span>ENGINEER IN PROGRESS.</span>
+    <span id="year"></span>
+  </footer>
+
+  <script src="content.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
