@@ -69,9 +69,9 @@
           <div class="project-copy">
             <h3>A ROBOT THAT HAS TO FIGURE OUT WHERE IT IS.</h3>
             <p>I work on the autonomous systems side of Texas A&amp;M’s SAE Aero team. Our payload gets dropped from a plane, lands inside an 8 ft × 8 ft zone, and has to navigate on its own before reconnecting with the aircraft.</p>
-            <p>My work has touched the PCB, sensors, motor control, embedded C++, camera research, and navigation. The part I like most is that every decision affects something else. A sensor choice changes the software. A power decision changes the board. An algorithm is useless if the hardware cannot give it the data it needs.</p>
+            <p>My work has touched the PCB, sensors, motor control, embedded C++, vision research, and navigation. Right now I’m also developing a thermal reattachment concept that uses an MLX90640 and two PTC heaters as landmarks, then continuously corrects the payload toward the opening between them.</p>
             <div class="tags">
-              <span>KiCad</span><span>STM32</span><span>C++</span><span>AprilTags</span><span>Motor Control</span>
+              <span>KiCad</span><span>STM32</span><span>C++</span><span>MLX90640</span><span>Thermal Sensing</span><span>Motor Control</span>
             </div>
           </div>
           <div class="project-visual photo-collage sae-collage">
@@ -89,6 +89,55 @@
             </figure>
           </div>
         </div>
+
+        <section class="thermal-demo" aria-labelledby="thermal-demo-title">
+          <div class="thermal-demo-head">
+            <div>
+              <p class="thermal-kicker">LIVE CONTROL CONCEPT</p>
+              <h4 id="thermal-demo-title">THERMAL REATTACHMENT.</h4>
+            </div>
+            <p>The payload reads two PTC heat signatures, compares their spacing and apparent size against calibration data, estimates its approach range, and changes how aggressively it corrects as it gets closer.</p>
+          </div>
+
+          <div class="thermal-demo-grid">
+            <div class="thermal-stage-wrap">
+              <canvas id="thermalDockScene" class="thermal-scene" width="820" height="500" aria-label="Animated payload approaching a reattachment opening marked by two PTC heaters"></canvas>
+              <div class="thermal-controls">
+                <button type="button" id="thermalPlay">Pause</button>
+                <button type="button" id="thermalReset">Reset</button>
+                <button type="button" id="thermalDisturb">Push off-center</button>
+              </div>
+            </div>
+
+            <div class="thermal-panel">
+              <div class="thermal-mode-row">
+                <span>APPROACH MODE</span>
+                <strong id="thermalMode">FAR</strong>
+              </div>
+              <p id="thermalModeHelp" class="thermal-help">Large corrections are allowed while there is room.</p>
+
+              <div class="thermal-metrics">
+                <div><span>Distance</span><strong><b id="thermalDistance">58.0</b> in</strong></div>
+                <div><span>Error</span><strong><b id="thermalError">0.0</b> px</strong></div>
+                <div><span>PTC separation</span><strong><b id="thermalSep">0.0</b> px</strong></div>
+                <div><span>Blob width</span><strong><b id="thermalBlob">0.0</b> px</strong></div>
+              </div>
+
+              <div class="thermal-confidence">
+                <div><span>DETECTION CONFIDENCE</span><b id="thermalConfidenceText">0%</b></div>
+                <div class="thermal-confidence-track"><i id="thermalConfidenceBar"></i></div>
+              </div>
+
+              <div class="thermal-camera-label">ROTATED MLX90640 VIEW · 24 × 32</div>
+              <canvas id="thermalCamera" class="thermal-camera" width="360" height="480" aria-label="Simulated rotated MLX90640 thermal frame"></canvas>
+            </div>
+          </div>
+
+          <div class="thermal-logic">
+            <span>SEE</span><i>→</i><span>MEASURE</span><i>→</i><span>ESTIMATE DISTANCE</span><i>→</i><span>CORRECT</span><i>→</i><span>MOVE</span><i>→</i><span>REPEAT</span>
+          </div>
+          <p class="thermal-note">Demo values are illustrative. The real FAR / MEDIUM / CLOSE thresholds and distance lookup would come from calibration tests with the actual MLX90640 + PTC geometry.</p>
+        </section>
       </article>
 
       <article class="project project-cream reveal" data-project="watch">
@@ -137,7 +186,7 @@
           </div>
           <div class="project-visual photo-collage research-collage">
             <figure class="photo-tile eeg-main">
-              <img src="assets/eeg_trace2.webp" alt="EEGLAB channel activity view showing EEG artifact regions" loading="lazy">
+              <img src="assets/eeg_trace_review.webp" alt="EEGLAB four-channel EEG view showing artifact regions selected for review" loading="lazy">
               <figcaption>4-CHANNEL EEG / ARTIFACT REVIEW</figcaption>
             </figure>
             <figure class="photo-tile eeg-secondary">

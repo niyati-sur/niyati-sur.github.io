@@ -258,3 +258,66 @@ footer { padding:24px 4vw 30px; display:flex; justify-content:space-between; fon
   .eeg-secondary { width:54%; left:14px; bottom:18px; }
   .signal-stamp { left:14px; top:18px; }
 }
+
+
+/* Interactive thermal docking demo */
+.thermal-demo {
+  margin-top: 24px;
+  padding: 34px;
+  border: 1px solid rgba(244,239,231,.22);
+  border-radius: 30px;
+  background: #0e1118;
+  color: var(--paper);
+}
+.thermal-demo-head { display:grid; grid-template-columns:.78fr 1.22fr; gap:36px; align-items:end; margin-bottom:26px; }
+.thermal-kicker { margin:0 0 8px; color:var(--acid); font:700 10px var(--body); letter-spacing:.15em; }
+.thermal-demo h4 { margin:0; font:700 clamp(48px,6vw,88px)/.86 var(--display); letter-spacing:-.045em; }
+.thermal-demo-head > p { margin:0; max-width:720px; color:#c9c3d2; font-size:14px; line-height:1.65; }
+.thermal-demo-grid { display:grid; grid-template-columns:1.45fr .72fr; gap:18px; align-items:stretch; }
+.thermal-stage-wrap,.thermal-panel { border:1px solid rgba(255,255,255,.14); border-radius:22px; background:#151924; overflow:hidden; }
+.thermal-stage-wrap { padding:12px; }
+.thermal-scene,.thermal-camera { width:100%; height:auto; display:block; background:#0a0d13; border-radius:15px; }
+.thermal-controls { display:flex; flex-wrap:wrap; gap:8px; padding-top:10px; }
+.thermal-controls button { appearance:none; border:1px solid rgba(255,255,255,.2); background:#222837; color:var(--paper); border-radius:999px; padding:10px 14px; font:700 10px var(--body); letter-spacing:.08em; text-transform:uppercase; cursor:pointer; transition:.2s ease; }
+.thermal-controls button:first-child { background:var(--acid); color:var(--ink); border-color:var(--acid); }
+.thermal-controls button:hover { transform:translateY(-1px); border-color:var(--acid); }
+.thermal-panel { padding:18px; }
+.thermal-mode-row { display:flex; align-items:baseline; justify-content:space-between; gap:12px; border-bottom:1px solid rgba(255,255,255,.12); padding-bottom:12px; }
+.thermal-mode-row span,.thermal-camera-label { font:700 9px var(--body); letter-spacing:.13em; color:#918b9c; }
+.thermal-mode-row strong { font:700 30px var(--display); color:var(--acid); }
+.thermal-help { min-height:43px; margin:12px 0 16px; color:#bdb7c6; font-size:12px; line-height:1.5; }
+.thermal-metrics { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.thermal-metrics > div { padding:10px; background:#1d2230; border-radius:12px; }
+.thermal-metrics span { display:block; color:#918b9c; font-size:9px; text-transform:uppercase; letter-spacing:.08em; }
+.thermal-metrics strong { display:block; margin-top:3px; font-size:15px; }
+.thermal-metrics b { font:700 19px var(--display); }
+.thermal-confidence { margin:15px 0; }
+.thermal-confidence > div:first-child { display:flex; justify-content:space-between; font-size:9px; letter-spacing:.1em; color:#918b9c; }
+.thermal-confidence-track { margin-top:7px; height:7px; border-radius:999px; background:#2b3140; overflow:hidden; }
+.thermal-confidence-track i { display:block; width:0; height:100%; background:var(--acid); border-radius:inherit; transition:width .15s linear; }
+.thermal-camera-label { margin:17px 0 8px; }
+.thermal-camera { max-height:310px; object-fit:contain; image-rendering:pixelated; }
+.thermal-logic { margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; color:#aaa4b2; font:700 9px var(--body); letter-spacing:.1em; }
+.thermal-logic span { padding:7px 9px; border:1px solid rgba(255,255,255,.13); border-radius:999px; }
+.thermal-logic i { color:var(--acid); font-style:normal; }
+.thermal-note { margin:14px 0 0; color:#8e8997; font-size:10px; line-height:1.5; }
+
+/* Make the new wide EEG review screenshot the visual focus. */
+.research-collage .eeg-main { inset:26px 26px 118px 26px; z-index:1; }
+.research-collage .eeg-main img { object-position:center; object-fit:cover; }
+.research-collage .eeg-secondary { width:42%; height:38%; left:auto; right:24px; bottom:22px; z-index:3; transform:rotate(1.2deg); }
+.research-collage .signal-stamp { z-index:4; }
+
+@media (max-width: 900px) {
+  .thermal-demo-head,.thermal-demo-grid { grid-template-columns:1fr; }
+  .thermal-camera { max-height:none; }
+}
+@media (max-width: 560px) {
+  .thermal-demo { padding:18px; border-radius:22px; }
+  .thermal-demo h4 { font-size:14vw; }
+  .thermal-demo-head { gap:18px; }
+  .thermal-metrics { grid-template-columns:1fr 1fr; }
+  .thermal-controls button { flex:1 1 auto; }
+  .research-collage .eeg-main { inset:52px 12px 96px 12px; }
+  .research-collage .eeg-secondary { width:48%; height:34%; right:12px; bottom:14px; }
+}
